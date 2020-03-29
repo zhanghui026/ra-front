@@ -17,8 +17,8 @@ export const PostList = props => (
     <List filters={<PostFilter />} {...props}>
         <Datagrid>
             <TextField source="id" />
-            <TextField source="userId" />
-            {/* <ReferenceField source="userId" reference="users"><TextField source="name" /></ReferenceField> */}
+            {/* <TextField source="userId" /> */}
+            <ReferenceField source="userId" reference="clients"><TextField source="name" /></ReferenceField>
             <TextField source="title" />
             {/* <TextField source="body" /o> */}
             <EditButton />
@@ -36,9 +36,9 @@ export const PostEdit = props => (
     <Edit title={<PostTitle></PostTitle>} {...props}>
         <SimpleForm>
             <TextInput disabled source="id"/>
-            {/* <ReferenceInput source="userId" reference="users">
+            <ReferenceInput source="userId" reference="clients">
                 <SelectInput optionText="name" />
-            </ReferenceInput> */}
+            </ReferenceInput> 
             <TextInput source="title" />
             <TextInput multiline source="body" />
         </SimpleForm>
@@ -50,9 +50,9 @@ export const PostEdit = props => (
 export const PostCreate = props => (
     <Create {...props}>
         <SimpleForm>
-            {/* <ReferenceInput source="userId" reference="users">
+            <ReferenceInput source="userId" reference="clients">
                 <SelectInput optionText="name" />
-            </ReferenceInput> */}
+            </ReferenceInput>
             <TextInput source="title" />
             <TextInput multiline source="body" />
         </SimpleForm>

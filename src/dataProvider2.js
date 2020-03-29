@@ -137,7 +137,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
       }));
     }
 
-    const { url, options } = convertDataRequestToHTTP(type, resource, params);
+    const { url, options } = (type, resource, params);
     return httpClient(url, options).then(response =>
       convertHTTPResponse(response, type, resource, params)
     );

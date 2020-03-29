@@ -1,12 +1,12 @@
-import { fetchUtils } from 'react-admin';
+import { fetchUtils,DataProvider } from 'react-admin';
 import { stringify } from 'query-string';
 
-const apiUrl = 'http://localhost:8080/api';
-const httpClient = fetchUtils.fetchJson;
+const apiUrlDefault = 'http://localhost:8080/api';
+const httpClientDefault = fetchUtils.fetchJson;
 
 const fstr = (str) => typeof str == 'string' ? str + "*" : str;
 
-export default {
+const dataProvider =  (apiUrl = apiUrlDefault,httpClient = httpClientDefault ) => ({
 
     getList: (resource, params) => {
         const { page, perPage } = params.pagination;
@@ -32,12 +32,13 @@ export default {
         }));
     }, 
 
-    getOne: (resource,params) => 
-        httpClient(`${apiUrl}/${resource}/${params.id}`).then(({ json }) => ({
+    getOne: (resource,params) => { 
+        return httpClient(`${apiUrl}/${resource}/${params.id}`).then(({ json }) => ({
             data: json,
-        })),
+        }))},
 
     getMany: (resource,params) => {
+        console.log(params)
         const query = {
             filter: JSON.stringify({ id: params.ids }),
         };
@@ -75,4 +76,6 @@ export default {
                 body: JSON.stringify(params.data),
             }).then(({ json }) => ({ data: params.ids }));
         },   
-}
+});
+
+export default dataProvider;
