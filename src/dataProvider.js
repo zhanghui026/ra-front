@@ -4,16 +4,24 @@ import { stringify } from 'query-string';
 const apiUrl = 'http://localhost:8080/api';
 const httpClient = fetchUtils.fetchJson;
 
+const fstr = (str) => typeof str == 'string' ? str + "*" : str;
+
 export default {
 
     getList: (resource, params) => {
         const { page, perPage } = params.pagination;
         const { field, order} = params.sort;
 
+        var search ;
+        if (params.filter){
+            search = Object.entries(params.filter).map(it => it[0] + '==' + fstr(it[1])).join('&');
+        }
+
         const query = {
           page: page -1,
           size: perPage,
-          sort: field? field+","+order.toLowerCase():'id,asc',  
+          sort: field? field+","+order.toLowerCase():'id,asc', 
+          search: search 
         };
 
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
@@ -58,7 +66,6 @@ export default {
    
         
     deleteMany: (resource, params) => {
-        console.log(params)
          const query = {
              id: params.ids.map(String).join(',')
         };
