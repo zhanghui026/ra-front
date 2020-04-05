@@ -6,11 +6,24 @@ const myDataProvider = (apiUrl ,httpClient) => {
     const dataProvider = dp(apiUrl, httpClient); 
 
     return {...dataProvider,
+
+    update: (resource, params) => {
+        console.log(params);
+        
+            if (resource !== 'products' || !params.data.picture) {
+                // fallback to the default implementation
+                return dataProvider.update(resource, params);
+            }
+    
+    },
     create: (resource, params) => {
+        
         if (resource !== 'products' || !params.data.picture) {
             // fallback to the default implementation
             return dataProvider.create(resource, params);
         }
+
+       
         /**
          * For posts update only, convert uploaded image in base 64 and attach it to
          * the `picture` sent property, with `src` and `title` attributes.

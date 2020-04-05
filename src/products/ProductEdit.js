@@ -1,17 +1,11 @@
 import React from 'react';
 import {
-    Datagrid,
-    DateField,
     Edit,
-    EditButton,
     FormTab,
     NumberInput,
-    Pagination,
     ReferenceInput,
-    ReferenceManyField,
     SelectInput,
     TabbedForm,
-    TextField,
     TextInput,
 } from 'react-admin';
 import { InputAdornment } from '@material-ui/core';
@@ -22,7 +16,7 @@ import RichTextInput from 'ra-input-rich-text';
 // import StarRatingField from '../reviews/StarRatingField';
 import Poster from './Poster';
 import { styles as createStyles } from './ProductCreate';
-import UploadButton from './UploadButton';
+
 
 
 const ProductTitle = ({ record }) => <span>Poster #{record.reference}</span>;

@@ -14,8 +14,6 @@ import {
 import { InputAdornment } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import RichTextInput from 'ra-input-rich-text';
-import Poster from './Poster';
-
 
 export const styles = {
     price: { width: '7em' },
@@ -34,7 +32,9 @@ const ProductCreate = props => {
         <Create {...props}>
             <TabbedForm>
                 <FormTab label="resources.products.tabs.image">
-                    <Poster />
+                    <ImageInput source="picture" label="Related pictures" accept="image/*" placeholder={<p>Drop your file here</p>}>
+                        <ImageField source="src" title="title" />
+                    </ImageInput>
                     <TextInput
                         autoFocus
                         source="image"
