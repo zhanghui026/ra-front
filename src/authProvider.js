@@ -22,15 +22,15 @@ const authProvider = (apiUrl) => ({
                 return token;
             })
             .then((token) => {
-                console.log(token);
+                // console.log(token);
                 localStorage.setItem('raToken',token);
-                console.log(localStorage.getItem('raToken'));
+                // console.log(localStorage.getItem('raToken'));
                 return Promise.resolve();
             });
             
     },
     logout: () => {
-        console.log('logout');
+        // console.log('logout');
         localStorage.removeItem('raToken');
         // localStorage.removeItem('role');
         return Promise.resolve();

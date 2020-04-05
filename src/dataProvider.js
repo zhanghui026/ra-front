@@ -1,7 +1,7 @@
 import { fetchUtils,DataProvider } from 'react-admin';
 import { stringify } from 'query-string';
+import apiUrlDefault from './appConstant'; 
 
-const apiUrlDefault = 'http://localhost:8080/api';
 const httpClientDefault = fetchUtils.fetchJson;
 
 const fstr = (str) => typeof str == 'string' ? str + "*" : str;
@@ -38,7 +38,7 @@ const dataProvider =  (apiUrl = apiUrlDefault,httpClient = httpClientDefault ) =
         }))},
 
     getMany: (resource,params) => {
-        console.log(params)
+        // console.log(params)
         const query = {
             filter: JSON.stringify({ id: params.ids }),
         };
@@ -52,13 +52,15 @@ const dataProvider =  (apiUrl = apiUrlDefault,httpClient = httpClientDefault ) =
             body: JSON.stringify(params.data),
         }).then(({ json }) => ({ data: json })),
 
-    create: (resource, params) =>
-        httpClient(`${apiUrl}/${resource}`, {
+    create: (resource, params) => {
+        console.log(JSON.stringify(params.data));
+       return  httpClient(`${apiUrl}/${resource}`, {
             method: 'POST',
             body: JSON.stringify(params.data),
         }).then(({ json }) => ({
             data: { ...params.data, id: json.id },
-        })),
+        }))
+    },
        
     delete: (resource, params) =>
         httpClient(`${apiUrl}/${resource}/${params.id}`, {

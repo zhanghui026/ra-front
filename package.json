@@ -13,7 +13,8 @@
     "react": "^16.13.0",
     "react-admin": "^3.2.3",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "react-zmage": "^0.8.5-beta.31"
   },
   "scripts": {
     "start": "react-scripts start",

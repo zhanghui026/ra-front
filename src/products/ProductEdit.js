@@ -18,10 +18,12 @@ import { InputAdornment } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import RichTextInput from 'ra-input-rich-text';
 
-import CustomerReferenceField from '../visitors/CustomerReferenceField';
-import StarRatingField from '../reviews/StarRatingField';
+// import CustomerReferenceField from '../visitors/CustomerReferenceField';
+// import StarRatingField from '../reviews/StarRatingField';
 import Poster from './Poster';
 import { styles as createStyles } from './ProductCreate';
+import UploadButton from './UploadButton';
+
 
 const ProductTitle = ({ record }) => <span>Poster #{record.reference}</span>;
 
@@ -84,7 +86,7 @@ const ProductEdit = props => {
                             ),
                         }}
                     />
-                    <ReferenceInput source="category_id" reference="categories">
+                    <ReferenceInput source="categoryId" reference="categories">
                         <SelectInput source="name" />
                     </ReferenceInput>
                     <NumberInput source="stock" className={classes.stock} />
@@ -95,7 +97,7 @@ const ProductEdit = props => {
                 >
                     <RichTextInput source="description" label="" />
                 </FormTab>
-                <FormTab label="resources.products.tabs.reviews" path="reviews">
+                {/* <FormTab label="resources.products.tabs.reviews" path="reviews">
                     <ReferenceManyField
                         reference="reviews"
                         target="product_id"
@@ -104,18 +106,18 @@ const ProductEdit = props => {
                         fullWidth
                     >
                         <Datagrid>
-                            <DateField source="date" />
-                            <CustomerReferenceField />
-                            <StarRatingField />
-                            <TextField
+                            <DateField source="date" /> */}
+                            {/* <CustomerReferenceField /> */}
+                            {/* <StarRatingField /> */}
+                            {/* <TextField
                                 source="comment"
                                 cellClassName={classes.comment}
                             />
                             <TextField source="status" />
                             <EditButton />
                         </Datagrid>
-                    </ReferenceManyField>
-                </FormTab>
+                    </ReferenceManyField> */}
+                {/* </FormTab> */}
             </TabbedForm>
         </Edit>
     );

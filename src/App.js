@@ -8,7 +8,7 @@ import { PostList, PostEdit, PostCreate } from './posts';
 import PostIcon from '@material-ui/icons/Book';
 import UserIcon from '@material-ui/icons/Group';
 import Dasboard from './Dashboard';
-import dataProvider from './dataProvider';
+import dataProvider from './myDataProvider';
 import MyLogoutButton from './MyLogoutButton';
 import polyglotI18nProvider from 'ra-i18n-polyglot';
 import englishMessages from './i18n/en';

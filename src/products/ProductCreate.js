@@ -8,6 +8,8 @@ import {
     TabbedForm,
     TextInput,
     required,
+    ImageField,
+    ImageInput,
 } from 'react-admin';
 import { InputAdornment } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -30,6 +32,9 @@ const ProductCreate = props => {
         <Create {...props}>
             <TabbedForm>
                 <FormTab label="resources.products.tabs.image">
+                    <ImageInput source="picture" label="Related pictures" accept="image/*" placeholder={<p>Drop your file here</p>}>
+                        <ImageField source="src" title="title" />
+                    </ImageInput>
                     <TextInput
                         autoFocus
                         source="image"
