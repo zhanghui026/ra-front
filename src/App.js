@@ -16,6 +16,7 @@ import englishMessages from './i18n/en';
 
 import products from './products';
 import categories from './categories';
+import visitors from './visitors';
 
 // import MyLoginPage from './MyLoginPage';
 import Login from './layout/Login'
@@ -61,6 +62,7 @@ const App = () => (
       <Resource name="clients" list={UserList} show={ShowGuesser} edit={EditGuesser} icon={UserIcon}></Resource>,
       <Resource name="products" {...products} />,
       <Resource name="categories" {...categories} />,
+      <Resource name="customers" {...visitors} />
     ]}
   </Admin>
 );

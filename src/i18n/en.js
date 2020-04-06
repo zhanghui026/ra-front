@@ -154,7 +154,7 @@ export default {
         customers: {
             name: 'Customer |||| Customers',
             fields: {
-                commands: 'Orders',
+                commands: '订单',
                 first_seen: 'First seen',
                 groups: 'Segments',
                 last_seen: 'Last seen',
