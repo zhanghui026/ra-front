@@ -4,7 +4,7 @@ import apiUrlDefault from './appConstant';
 
 const httpClientDefault = fetchUtils.fetchJson;
 
-const fstr = (str) => typeof str == 'string' ? str + "*" : str;
+const fstr = (str) => str ;//typeof str == 'string' ? str + "*" : str;
 
 const dataProvider =  (apiUrl = apiUrlDefault,httpClient = httpClientDefault ) => ({
 
@@ -15,7 +15,7 @@ const dataProvider =  (apiUrl = apiUrlDefault,httpClient = httpClientDefault ) =
 
         var search ;
         if (params.filter){
-            search = Object.entries(params.filter).map(it => it[0] + '==' + fstr(it[1])).join('&');
+            search = Object.entries(params.filter).map(it => it[0] + '==' + fstr(it[1])).join(';');
         }
 
         const query = {
@@ -40,12 +40,12 @@ const dataProvider =  (apiUrl = apiUrlDefault,httpClient = httpClientDefault ) =
 
         var search ;
         if (params.filter){
-            search = Object.entries(params.filter).map(it => it[0] + '==' + fstr(it[1])).join('&');
+            search = Object.entries(params.filter).map(it => it[0] + '==' + fstr(it[1])).join(';');
         }
 
         console.log("getManyReference",target);
         if (target) {
-            search = search ? '&'+ target+'=='+params.id : target +"=="+params.id;
+            search = search ? ';'+ target+'=='+params.id : target +"=="+params.id;
         }
 
         const query = {

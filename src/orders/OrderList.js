@@ -29,11 +29,11 @@ import CustomerReferenceField from '../visitors/CustomerReferenceField';
 const OrderFilter = props => (
     <Filter {...props}>
         <SearchInput source="q" alwaysOn />
-        <ReferenceInput source="customer_id" reference="customers">
+        <ReferenceInput source="customerId" reference="customers">
             <AutocompleteInput
                 optionText={choice =>
-                    choice.first_name && choice.last_name
-                        ? `${choice.first_name} ${choice.last_name}`
+                    choice.firstName && choice.lastName
+                        ? `${choice.firstName} ${choice.lastName}`
                         : ''
                 }
             />
