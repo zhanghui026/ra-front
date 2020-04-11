@@ -39,11 +39,19 @@ const dataProvider =  (apiUrl = apiUrlDefault,httpClient = httpClientDefault ) =
 
     getMany: (resource,params) => {
         // console.log(params)
+        // const { page, perPage } = params.pagination;
+        // const { field, order} = params.sort;
+
         const query = {
-            filter: JSON.stringify({ id: params.ids }),
+            // page: page -1,
+            // size: perPage,
+            // sort: field? field+","+order.toLowerCase():'id,asc',
+            ids: params.ids.map(String).join(',')
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
-        return httpClient(url).then(({ json }) => ({ data: json }));
+        return httpClient(url).then(({headers,json}) => ({
+            data: json
+        }));
     },
         
     update: (resource, params) =>
@@ -72,7 +80,6 @@ const dataProvider =  (apiUrl = apiUrlDefault,httpClient = httpClientDefault ) =
          const query = {
              id: params.ids.map(String).join(',')
         };
-        console.log(`${apiUrl}/${resource}?${stringify(query)}`);
         return httpClient(`${apiUrl}/${resource}?${stringify(query)}`, {
                 method: 'DELETE',
                 body: JSON.stringify(params.data),

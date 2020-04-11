@@ -27,6 +27,7 @@ export default {
         boolean: {
             true: '是',
             false: '否',
+            null:'空'
         },
         page: {
             list: '%{name} 列表',
@@ -57,6 +58,9 @@ export default {
                 single_missing:
                     '关联的参考数据不再可用.',
             },
+            password: {
+                toggle_hidden: '点击显示密码'
+            }
         },
         message: {
             yes: '是',

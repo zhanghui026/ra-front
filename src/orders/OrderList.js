@@ -23,7 +23,7 @@ import {
 } from '@material-ui/core';
 
 import NbItemsField from './NbItemsField';
-// import CustomerReferenceField from '../visitors/CustomerReferenceField';
+import CustomerReferenceField from '../visitors/CustomerReferenceField';
 
 
 const OrderFilter = props => (
@@ -100,9 +100,9 @@ class TabbedDatagrid extends React.Component {
                                 optimized
                                 rowClick="edit"
                             >
-                                <DateField source="date" showTime />
+                                <DateField source="date"  />
                                 <TextField source="reference" />
-                                {/* <CustomerReferenceField /> */}
+                                <CustomerReferenceField />
                                 <NbItemsField />
                                 <NumberField
                                     source="total"
@@ -118,7 +118,7 @@ class TabbedDatagrid extends React.Component {
                             <Datagrid {...props} ids={this.state.delivered}>
                                 <DateField source="date" showTime />
                                 <TextField source="reference" />
-                                {/* <CustomerReferenceField /> */}
+                                <CustomerReferenceField />
                                 <NbItemsField />
                                 <NumberField
                                     source="total"
@@ -136,7 +136,7 @@ class TabbedDatagrid extends React.Component {
                             <Datagrid {...props} ids={this.state.cancelled}>
                                 <DateField source="date" showTime />
                                 <TextField source="reference" />
-                                {/* <CustomerReferenceField /> */}
+                                <CustomerReferenceField />
                                 <NbItemsField />
                                 <NumberField
                                     source="total"
@@ -151,7 +151,6 @@ class TabbedDatagrid extends React.Component {
                             </Datagrid>
                         )}
                     </div>
-                }
             </Fragment>
         );
     }
