@@ -17,7 +17,9 @@ import orders from './orders';
 import products from './products';
 import categories from './categories';
 import visitors from './visitors';
-import invoices from './invoices';
+import invoices from './invoices'
+import reviews from './reviews';
+
 
 
 // import MyLoginPage from './MyLoginPage';
@@ -71,7 +73,8 @@ const App = () => (
 
       <Resource name="products" {...products} />,
       <Resource name="categories" {...categories} />,
-      <Resource name="invoices" {...invoices} />
+      <Resource name="invoices" {...invoices} />,
+      <Resource name="reviews" {...reviews} />,
 
     ]}
   </Admin>

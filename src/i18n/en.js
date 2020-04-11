@@ -23,6 +23,8 @@ export default {
             search: '检索',
             show: '显示',
             clear_input_value: '清除',
+            expand: '展开',
+            close: '关闭'
         },
         boolean: {
             true: '是',
