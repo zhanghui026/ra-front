@@ -11,7 +11,7 @@ import {
 } from 'react-admin';
 import { makeStyles } from '@material-ui/core/styles';
 
-// import Basket from './Basket';
+import Basket from './Basket';
 
 const OrderTitle = ({ record }) => {
     const translate = useTranslate();
@@ -33,7 +33,7 @@ const OrderEdit = props => {
     return (
         <Edit
             title={<OrderTitle />}
-            // aside={<Basket />}
+            aside={<Basket />}
             classes={classes}
             {...props}
         >
