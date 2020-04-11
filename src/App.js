@@ -17,6 +17,8 @@ import orders from './orders';
 import products from './products';
 import categories from './categories';
 import visitors from './visitors';
+import invoices from './invoices';
+
 
 // import MyLoginPage from './MyLoginPage';
 import Login from './layout/Login'
@@ -69,6 +71,7 @@ const App = () => (
 
       <Resource name="products" {...products} />,
       <Resource name="categories" {...categories} />,
+      <Resource name="invoices" {...invoices} />
 
     ]}
   </Admin>

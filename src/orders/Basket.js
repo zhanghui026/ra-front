@@ -33,7 +33,6 @@ const Basket = ({ record }) => {
             const productIds = record
                 ? record.basket.map(item => item.productId)
                 : [];
-           console.log("products",productIds);
             const result = productIds
                 .map(
                     (productId) =>
@@ -49,16 +48,12 @@ const Basket = ({ record }) => {
                     },
                     {}
                 );
-            console.log("result",result);
                 return result;
         }
     );
 
     if (!loaded || !record) return null;
-
-    if (loaded && record) {
-        console.log("sss:",data)
-    }
+ 
 
     return (
         <Paper className={classes.container} elevation={2}>
