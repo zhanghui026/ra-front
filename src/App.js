@@ -1,17 +1,19 @@
 import React from 'react';
 import { Admin, Resource, ShowGuesser, EditGuesser, fetchUtils } from 'react-admin';
 import { UserList } from './user';
-import Dashboard from './Dashboard';
 import authProvider from './authProvider';
 import { PostList, PostEdit, PostCreate } from './posts';
 // import jsonServerProvider from 'ra-data-json-server';
 import PostIcon from '@material-ui/icons/Book';
 import UserIcon from '@material-ui/icons/Group';
-import Dasboard from './Dashboard';
+
 import dataProvider from './myDataProvider';
 import MyLogoutButton from './MyLogoutButton';
 import polyglotI18nProvider from 'ra-i18n-polyglot';
 import englishMessages from './i18n/en';
+import Dashboard  from './dashboard/Dashboard';
+
+
 
 import orders from './orders';
 import products from './products';

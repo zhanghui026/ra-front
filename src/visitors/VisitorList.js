@@ -22,7 +22,7 @@ import ColoredNumberField from './ColoredNumberField';
 const VisitorFilter = (props) => (
     <Filter {...props}>
         <SearchInput source="q" alwaysOn />
-        <DateInput source="lastSeenGte" />
+        <DateInput source="lastSeen_gte" />
         <NullableBooleanInput source="hasOrdered" />
         <NullableBooleanInput source="hasNewsletter" defaultValue />
         {/* <SegmentInput /> */}
