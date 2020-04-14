@@ -79,14 +79,14 @@ const LoadedGridList = ({ ids, data, basePath, width }) => {
                         key={id}
                         to={linkToRecord(basePath, data[id].id)}
                     >
-                        <img src={data[id].thumbnailImg} alt="" />
+                        <img src={data[id].thumbnailImg} alt="{data[id].name}" />
                         <GridListTileBar
                             className={classes.tileBar}
-                            title={data[id].reference}
+                            title={data[id].name}
                             subtitle={
                                 <span>
-                                    {data[id].width}x{data[id].height},{' '}
-                                    <NumberField
+                                    {data[id].width}x{data[id].height},{data[id].reference}
+                                    {/* <NumberField
                                         className={classes.price}
                                         source="price"
                                         record={data[id]}
@@ -95,7 +95,8 @@ const LoadedGridList = ({ ids, data, basePath, width }) => {
                                             style: 'currency',
                                             currency: 'USD',
                                         }}
-                                    />
+                                    /> */}
+                                    
                                 </span>
                             }
                         />
