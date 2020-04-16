@@ -4,7 +4,7 @@ import {
     FormTab,
     NumberInput,
     ReferenceInput,
-    SelectInput,
+    AutocompleteInput,
     TabbedForm,
     TextInput,
 } from 'react-admin';
@@ -40,8 +40,15 @@ const PaintingEdit = props => {
             <TabbedForm>
                 <FormTab label="resources.products.tabs.image">
                     <Poster isEdit={true} />
-                    <TextInput source="name" label="画作名字" fullWidth />
-                    <TextInput source="artistId" label="画家" fullWidth />
+                    <TextInput source="name" label="画作名字"/>
+                    {/* <TextInput source="artistId" label="画家" fullWidth /> */}
+                    <ReferenceInput source="artistId" reference="artists" label="作家名字" perPage={5000}>
+                    <AutocompleteInput
+                        optionText={choice =>
+                            `${choice.name}`
+                        }
+                    />
+                </ReferenceInput>
                     <TextInput source="museumId" label="艺术馆" fullWidth />
                     <TextInput source="categoryStatusId" label="类别"/>
                     <NumberInput source="rating" />

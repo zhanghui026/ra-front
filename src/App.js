@@ -76,6 +76,7 @@ const App = () => (
             <Resource name="invoices" {...invoices} />,
             <Resource name="reviews" {...reviews} />,
             <Resource name="paintings" {...paintings}/>,
+            <Resource name="artists" />,
 
         ]}
     </Admin>
