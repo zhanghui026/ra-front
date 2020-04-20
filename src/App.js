@@ -75,6 +75,8 @@ const App = () => (
             <Resource name="categories" {...categories} />,
             <Resource name="invoices" {...invoices} />,
             <Resource name="reviews" {...reviews} />,
+
+            //从这里开始，应用于图片展示
             <Resource name="paintings" {...paintings}/>,
             <Resource name="artists" />,
 

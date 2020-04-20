@@ -13,7 +13,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import RichTextInput from 'ra-input-rich-text';
 
 // import CustomerReferenceField from '../visitors/CustomerReferenceField';
-// import StarRatingField from '../reviews/StarRatingField';
+import StarInputField from './StarInputField';
 import Poster from './Poster';
 import { styles as createStyles } from './PaintingCreate';
 
@@ -42,7 +42,7 @@ const PaintingEdit = props => {
                     <Poster isEdit={true} />
                     <TextInput source="name" label="画作名字"/>
                     {/* <TextInput source="artistId" label="画家" fullWidth /> */}
-                    <ReferenceInput source="artistId" reference="artists" label="作家名字" perPage={5000}>
+                    <ReferenceInput source="artistId" reference="artists" label="作家名字" perPage={100}>
                     <AutocompleteInput
                         optionText={choice =>
                             `${choice.name}`
@@ -51,7 +51,7 @@ const PaintingEdit = props => {
                 </ReferenceInput>
                     <TextInput source="museumId" label="艺术馆" fullWidth />
                     <TextInput source="categoryStatusId" label="类别"/>
-                    <NumberInput source="rating" />
+                    <StarInputField source="rating" label="打分"/>
 
                 </FormTab>
                 <FormTab label="resources.products.tabs.details" path="details">
