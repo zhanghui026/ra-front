@@ -79,6 +79,7 @@ const App = () => (
             //从这里开始，应用于图片展示
             <Resource name="paintings" {...paintings}/>,
             <Resource name="artists" />,
+            <Resource name="museums" />,
 
         ]}
     </Admin>

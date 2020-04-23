@@ -7,6 +7,8 @@ import {
     AutocompleteInput,
     TabbedForm,
     TextInput,
+    SelectInput,
+    required
 } from 'react-admin';
 import { InputAdornment } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -38,23 +40,24 @@ const PaintingEdit = props => {
     return (
         <Edit {...props} title={<PaintingTitle />}>
             <TabbedForm>
-                <FormTab label="resources.products.tabs.image">
+                <FormTab label="resources.paintings.tabs.image">
                     <Poster isEdit={true} />
-                    <TextInput source="name" label="画作名字"/>
-                    {/* <TextInput source="artistId" label="画家" fullWidth /> */}
-                    <ReferenceInput source="artistId" reference="artists" label="作家名字" perPage={100}>
+                    <TextInput autoFocus source="name" label="画作名字" validate={required()}/> 
+                    <ReferenceInput source="artistId" reference="artists" label="画家名字" perPage={100}>
                     <AutocompleteInput
                         optionText={choice =>
                             `${choice.name}`
                         }
                     />
                 </ReferenceInput>
-                    <TextInput source="museumId" label="艺术馆" fullWidth />
+                <ReferenceInput source="museumId" reference="museums" label="艺术馆" perPage={100}>
+                <SelectInput optionText="name" />
+                </ReferenceInput>
                     <TextInput source="categoryStatusId" label="类别"/>
                     <StarInputField source="rating" label="打分"/>
 
                 </FormTab>
-                <FormTab label="resources.products.tabs.details" path="details">
+                <FormTab label="resources.paintings.tabs.details" path="details">
                     <TextInput source="reference" label="参考码" />
                     <TextInput source="pin" label="二维码" />
                     <TextInput source="materialId" label="材质" />
@@ -89,7 +92,7 @@ const PaintingEdit = props => {
                     <TextInput source="age" label="创作年代" />
                 </FormTab>
                 <FormTab
-                    label="resources.products.tabs.description"
+                    label="resources.paintings.tabs.description"
                     path="description"
                 >
                     
@@ -97,7 +100,7 @@ const PaintingEdit = props => {
                     <RichTextInput source="brief" label="简介" />
                     <RichTextInput source="info" label="详细信息" />
                 </FormTab>
-                {/* <FormTab label="resources.products.tabs.reviews" path="reviews">
+                {/* <FormTab label="resources.paintings.tabs.reviews" path="reviews">
                     <ReferenceManyField
                         reference="reviews"
                         target="product_id"

@@ -221,6 +221,30 @@ export default {
             },
         },
         products: {
+            name: 'products |||| products',
+            fields: {
+                category_id: 'Category',
+                height_gte: 'Min height',
+                height_lte: 'Max height',
+                height: '高度',
+                image: '清晰图',
+                price: '价格',
+                reference: '唯一id',
+                stock_lte: 'Low Stock',
+                stock: '大小',
+                thumbnail: '缩略图',
+                width_gte: 'Min width',
+                width_lte: 'Max width',
+                width: '宽度',
+            },
+            tabs: {
+                image: '艺术品',
+                details: '详细',
+                description: '描述',
+                reviews: '浏览',
+            },
+        },
+        paintings: {
             name: '油画 |||| 油画',
             fields: {
                 category_id: 'Category',
