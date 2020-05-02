@@ -80,6 +80,7 @@ const App = () => (
             <Resource name="paintings" {...paintings}/>,
             <Resource name="artists" />,
             <Resource name="museums" />,
+            <Resource name="tags" />
 
         ]}
     </Admin>
