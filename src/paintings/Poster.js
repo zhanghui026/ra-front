@@ -86,6 +86,8 @@ const Poster = ({record={},isEdit=false}) => {
     const edit = isEdit;
    
     const classes = useStyles();
+    
+    
     const [image, setImage] = useState(
         record.thumbnailImg
     );
@@ -101,6 +103,7 @@ const Poster = ({record={},isEdit=false}) => {
     const [uploaded, setUpLoaded] = useState (
         imageNo
     );
+    console.log("record:",record);
     
     return (
         <Card className={classes.root}>
@@ -110,12 +113,12 @@ const Poster = ({record={},isEdit=false}) => {
                 
                 <div onClick = {() => previewImg(image)} >
                 <Tooltip title ="鼠标打击可查看全图">
-                {uploaded ? <img src={image} alt="" className={classes.img} /> : <img src={image} alt="" className={classes.blankImg} />  }
+                {uploaded ? <img src={image?image:record.thumbnailImg} alt="" className={classes.img} /> : <img src={image} alt="" className={classes.blankImg} />  }
                 </Tooltip>
                 </div>
                  
                 <div>
-                    <PreviewButton imagePath={image} />
+                    <PreviewButton imagePath={image?image:record.thumbnailImg} />
 
                     <input accept="image/*" className={classes.input} id="icon-button-file" type="file" onChange={(event) => {
                         if (event.target.files && event.target.files[0]) {

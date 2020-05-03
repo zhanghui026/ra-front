@@ -122,27 +122,7 @@ const PaintingEdit = props => {
                     {/* <RichTextInput source="brief" label="简介" /> */}
                     <RichTextInput source="info" label="详细信息" />
                 </FormTab>
-                {/* <FormTab label="resources.paintings.tabs.reviews" path="reviews">
-                    <ReferenceManyField
-                        reference="reviews"
-                        target="product_id"
-                        addLabel={false}
-                        pagination={<Pagination />}
-                        fullWidth
-                    >
-                        <Datagrid>
-                            <DateField source="date" /> */}
-                {/* <CustomerReferenceField /> */}
-                {/* <StarRatingField /> */}
-                {/* <TextField
-                                source="comment"
-                                cellClassName={classes.comment}
-                            />
-                            <TextField source="status" />
-                            <EditButton />
-                        </Datagrid>
-                    </ReferenceManyField> */}
-                {/* </FormTab> */}
+             
             </TabbedForm>
         </Edit>
     );
