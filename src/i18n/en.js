@@ -1,4 +1,5 @@
 import chineseMessages from 'ra-language-chinese';
+import artists from '../artists';
 
 export default {
     ra: {
@@ -15,12 +16,12 @@ export default {
             refresh: '刷新',
             add: '增加',
             remove: '删除',
-            add_filter: '增加检索',
-            remove_filter: '移除检索',
+            add_filter: '增加条件',
+            remove_filter: '移除条件',
             back: '回退',
             bulk_actions: '选中%{smart_count}项',
             export: '导出',
-            search: '检索',
+            search: '搜索',
             show: '显示',
             clear_input_value: '清除',
             expand: '展开',
@@ -266,6 +267,15 @@ export default {
                 details: '详细',
                 description: '描述',
                 reviews: '浏览',
+            },
+        },
+        artists: {
+            name: '画家 |||| 画家',
+            fields: {
+              
+            },
+            tabs: {
+               
             },
         },
         categories: {

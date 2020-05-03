@@ -21,6 +21,7 @@ import visitors from './visitors';
 import invoices from './invoices'
 import reviews from './reviews';
 import paintings from './paintings';
+import artists from './artists';
 
 
 // import MyLoginPage from './MyLoginPage';
@@ -78,7 +79,7 @@ const App = () => (
 
             //从这里开始，应用于图片展示
             <Resource name="paintings" {...paintings}/>,
-            <Resource name="artists" />,
+            <Resource name="artists" {...artists} />,
             <Resource name="museums" />,
             <Resource name="tags" />
 

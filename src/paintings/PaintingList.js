@@ -29,21 +29,15 @@ export const PaintingFilter = props => (
     <Filter {...props}>
         <SearchInput source="q" alwaysOn />
         <ReferenceInput
-            source="categoryId"
-            reference="categories"
+            source="artistId"
+            reference="artists"
             sort={{ field: 'id', order: 'ASC' }}
+            perPage = {1000}
+            label = {"画家"} 
         >
-            <SelectInput source="name" />
+            <SelectInput source="name" label={"画家"}/>
         </ReferenceInput>
-        <NumberInput source="width_gte" />
-        <NumberInput source="width_lte" />
-        <NumberInput source="height_gte" />
-        <NumberInput source="height_lte" />
-        <QuickFilter
-            label="resources.products.fields.stock_lte"
-            source="stock_lte"
-            defaultValue={10}
-        />
+       
     </Filter>
 );
 
