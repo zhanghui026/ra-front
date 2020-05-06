@@ -274,6 +274,14 @@ export default {
             fields: {
               
             },
+            fieldGroups: {
+                identity: '作家信息',
+                address: '介绍',
+                stats: 'Stats',
+                history: 'History',
+                password: 'Password',
+                change_password: 'Change Password',
+            },
             tabs: {
                
             },

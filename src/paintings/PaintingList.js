@@ -2,7 +2,6 @@ import React from 'react';
 import {
     Filter,
     List,
-    NumberInput,
     Pagination,
     ReferenceInput,
     SearchInput,
